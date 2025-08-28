@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Mobile Responsive -->
+  <title>FitPulse - Health & Fitness Website</title>
+  <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+  <script>
+    (function(){
+      emailjs.init("etro-3IHa_MC_hwjC"); // Your EmailJS Public Key
+    })();
+  </script>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(to right, #4a00e0, #8e2de2);
+      color: white;
+      text-align: center;
+    }
+    header {
+      background: rgba(0,0,0,0.6);
+      padding: 20px;
+    }
+    section {
+      padding: 30px;
+      margin: 15px;
+      background: rgba(255,255,255,0.1);
+      border-radius: 15px;
+    }
+    h2 { color: #ffdd57; }
+    input, select, textarea, button {
+      padding: 10px;
+      margin: 10px;
+      border-radius: 8px;
+      border: none;
+      width: 90%;
+      max-width: 400px;
+    }
+    button {
+      background: #ffdd57;
+      color: black;
+      cursor: pointer;
+      font-weight: bold;
+    }
+    img {
+      width: 100%;
+      max-width: 300px;
+      height: auto;
+      border-radius: 12px;
+      margin: 10px auto;
+      display: block;
+    }
+    ul {
+      text-align: left;
+      display: inline-block;
+      padding-left: 20px;
+    }
+    @media (max-width: 600px) {
+      section {
+        padding: 15px;
+        margin: 10px;
+      }
+      ul {
+        font-size: 14px;
+      }
+      input, select, textarea, button {
+        width: 95%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>🌿 FitPulse</h1>
+    <p>Stay Fit • Eat Healthy • Live Happy</p>
+  </header>
+
+  <!-- Exercises Section -->
+  <section id="exercises">
+    <h2>Exercises</h2>
+    <img src="https://images.pexels.com/photos/414029/pexels-photo-414029.jpeg" alt="Exercise">
+    <img src="https://images.pexels.com/photos/3823039/pexels-photo-3823039.jpeg" alt="Yoga">
+    <img src="https://images.pexels.com/photos/2261477/pexels-photo-2261477.jpeg" alt="Strength Training">
+    <img src="https://images.pexels.com/photos/3757957/pexels-photo-3757957.jpeg" alt="Running">
+    <p>Daily exercise helps maintain strength, stamina, and immunity.</p>
+  </section>
+
+  <!-- Nutrition Section -->
+  <section id="nutrition">
+    <h2>Nutrition & Diet</h2>
+    <img src="https://images.pexels.com/photos/1640777/pexels-photo-1640777.jpeg" alt="Healthy Food">
+    <img src="https://images.pexels.com/photos/4198023/pexels-photo-4198023.jpeg" alt="Fruits and Vegetables">
+    <img src="https://images.pexels.com/photos/5938/food-salad-healthy-lunch.jpg" alt="Salad">
+    <img src="https://images.pexels.com/photos/1109197/pexels-photo-1109197.jpeg" alt="Breakfast Bowl">
+    <p>A balanced diet with proteins, carbs, fats, and vitamins is essential for fitness.</p>
+  </section>
+
+  <!-- Healthy Tips -->
+  <section id="tips">
+    <h2>Basic Healthy Tips</h2>
+    <img src="https://images.pexels.com/photos/414886/pexels-photo-414886.jpeg" alt="Motivation" style="max-width: 300px;">
+    <ul>
+      <li>Drink at least 8 glasses of water daily.</li>
+      <li>Get 7–8 hours of sleep every night.</li>
+      <li>Eat more fruits and vegetables.</li>
+      <li>Avoid junk food and sugary drinks.</li>
+      <li>Exercise at least 30 minutes daily.</li>
+      <li>Practice meditation to reduce stress.</li>
+      <li>Maintain proper body posture.</li>
+      <li>Wash hands regularly to stay hygienic.</li>
+      <li>Take short breaks from screens.</li>
+      <li>Stay positive and motivated.</li>
+    </ul>
+  </section>
+
+  <!-- Tools Section -->
+  <section id="tools">
+    <h2>Health Tools</h2>
+
+    <!-- Calorie Calculator -->
+    <h3>Calories Requirement Calculator</h3>
+    <form id="calorieForm">
+      <input type="number" id="age" placeholder="Age" required><br>
+      <select id="gender">
+        <option value="male">Male</option>
+        <option value="female">Female</option>
+      </select><br>
+      <input type="number" id="weight" placeholder="Weight (kg)" required><br>
+      <input type="number" id="height" placeholder="Height (cm)" required><br>
+      <select id="activity">
+        <option value="1.2">Sedentary (little/no exercise)</option>
+        <option value="1.375">Light (1–3 days/week)</option>
+        <option value="1.55">Moderate (3–5 days/week)</option>
+        <option value="1.725">Active (6–7 days/week)</option>
+        <option value="1.9">Very Active (hard exercise)</option>
+      </select><br>
+      <button type="submit">Calculate Calories</button>
+    </form>
+    <p id="calorieResult"></p>
+
+    <!-- BMI Calculator -->
+    <h3>BMI Calculator</h3>
+    <form id="bmiForm">
+      <input type="number" id="bmiWeight" placeholder="Weight (kg)" required><br>
+      <input type="number" id="bmiHeight" placeholder="Height (cm)" required><br>
+      <button type="submit">Calculate BMI</button>
+    </form>
+    <p id="bmiResult"></p>
+
+    <!-- Water Intake Calculator -->
+    <h3>Water Intake Calculator</h3>
+    <form id="waterForm">
+      <input type="number" id="waterWeight" placeholder="Weight (kg)" required><br>
+      <button type="submit">Calculate Water Intake</button>
+    </form>
+    <p id="waterResult"></p>
+  </section>
+
+  <!-- Feedback Section -->
+  <section id="feedback">
+    <h2>Feedback</h2>
+    <form id="feedbackForm">
+      <input type="text" name="user_name" placeholder="Your Name" required><br>
+      <input type="email" name="user_email" placeholder="Your Email" required><br>
+      <textarea name="message" placeholder="Write your feedback..." required></textarea><br>
+      <button type="submit">Submit Feedback</button>
+    </form>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact">
+    <h2>Contact Us</h2>
+    <form id="contactForm">
+      <input type="text" name="user_name" placeholder="Your Name" required><br>
+      <input type="email" name="user_email" placeholder="Your Email" required><br>
+      <textarea name="message" placeholder="Your Message" required></textarea><br>
+      <button type="submit">Send</button>
+    </form>
+    <p>📱 Call/WhatsApp: <a href="https://wa.me/916281042573" target="_blank">+91 6281042573</a></p>
+    <p>📧 Email: udaylenka30@gmail.com</p>
+  </section>
+
+  <script>
+    // Calorie Calculator
+    document.getElementById("calorieForm").addEventListener("submit", function(e){
+      e.preventDefault();
+      let age = +document.getElementById("age").value;
+      let gender = document.getElementById("gender").value;
+      let weight = +document.getElementById("weight").value;
+      let height = +document.getElementById("height").value;
+      let activity = +document.getElementById("activity").value;
+      let bmr = (gender === "male") ? 10*weight + 6.25*height - 5*age + 5
+                                    : 10*weight + 6.25*height - 5*age -161;
+      let calories = bmr * activity;
+      document.getElementById("calorieResult").innerText = "Your daily calorie need is: " + Math.round(calories) + " kcal.";
+    });
+
+    // BMI Calculator
+    document.getElementById("bmiForm").addEventListener("submit", function(e){
+      e.preventDefault();
+      let weight = +document.getElementById("bmiWeight").value;
+      let height = +document.getElementById("bmiHeight").value / 100;
+      let bmi = weight / (height*height);
+      let category = (bmi < 18.5) ? "Underweight" :
+                     (bmi < 25) ? "Normal" :
+                     (bmi < 30) ? "Overweight" : "Obese";
+      document.getElementById("bmiResult").innerText = "Your BMI is " + bmi.toFixed(1) + " (" + category + ")";
+    });
+
+    // Water Intake Calculator
+    document.getElementById("waterForm").addEventListener("submit", function(e){
+      e.preventDefault();
+      let weight = +document.getElementById("waterWeight").value;
+      let water = weight * 35; // ml per kg
+      document.getElementById("waterResult").innerText = "Recommended daily water intake: " + Math.round(water/1000) + " liters.";
+    });
+
+    // Contact Form
+    document.getElementById("contactForm").addEventListener("submit", function(e){
+      e.preventDefault();
+      emailjs.sendForm("service_zyejsqs","template_g3xw9qi", this)
+      .then(() => alert("✅ Message sent successfully!"))
+      .catch((err) => alert("❌ Error: " + JSON.stringify(err)));
+    });
+
+    // Feedback Form
